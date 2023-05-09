@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Sever and Clients
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Author**: Jared Plummer
 
-## Available Scripts
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This application is a weather API that allows users to get the forecast of a specific location. The weather data is stored in a JSON file, and users can query the API using latitude, longitude, or city name. The application uses Node.js and the Express.js framework.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run this application on your local machine, you will need to have Node.js and npm (Node Package Manager) installed. Then, follow these steps:
 
-### `npm test`
+1. Clone the repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install the dependencies by running `npm install` in the terminal
 
-### `npm run build`
+3. Run the server by running `npm start` in the terminal
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The server will start running on port 3001, and you can access it by going to `http://localhost:3001/weather`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Architecture
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This application uses Node.js and the Express.js framework to create an API server. The server listens for incoming requests and responds with weather forecast data. The weather data is stored in a JSON file, and the server retrieves the data based on the user's query. 
 
-### `npm run eject`
+The API server has one endpoint: `/weather`. When the server receives a GET request at this endpoint, it extracts the latitude, longitude, and search query parameters from the request. It then searches the weather data JSON file for a location that matches the search query or the latitude and longitude. If a matching location is found, the server sends back the weather forecast data for that location. If no matching location is found, the server sends back an error message.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application also defines a `Forecast` class, which is used to create forecast objects with a specific format. This class is used to create an array of forecast objects from the weather data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Change Log
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+09-05-2023 2:00pm - Initial version of the application with the ability to search for weather forecast by latitude, longitude or city name.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Credit and Collaborations
 
-## Learn More
+No credit or collaborations at this time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Features and Times
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Name of feature: **Weather info for the city**
 
-### Code Splitting
+Estimate of time needed to complete: **4 hours**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start time: **11:44**
 
-### Analyzing the Bundle Size
+Finish time: **1:45**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Actual time needed to complete: **2 hours**
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
