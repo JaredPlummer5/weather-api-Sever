@@ -38,7 +38,6 @@ app.get('/weather', function (req, res) {
 app.listen(3001);
 
 
-
 class Forecast {
     constructor(date, description, lon, lat, city_name) {
         this.date = date;
