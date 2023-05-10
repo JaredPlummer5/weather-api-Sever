@@ -8,8 +8,6 @@ const data = require('./data/weather.json');
 const app = express();
 app.use(cors());
 
-
-
 app.get('/weather', function (req, res) {
     let { lat, lon, searchQuery } = req.query;
     console.log(lat, lon, searchQuery);
@@ -49,4 +47,3 @@ class Forecast {
     }
 
 }
-
