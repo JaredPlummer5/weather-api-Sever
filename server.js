@@ -9,6 +9,7 @@ const app = express();
 app.use(cors());
 
 
+
 app.get('/weather', function (req, res) {
     let { lat, lon, searchQuery } = req.query;
     console.log(lat, lon, searchQuery);
@@ -23,7 +24,7 @@ app.get('/weather', function (req, res) {
     let error;
     console.log("dataFinder",dataFinder)
     if (dataFinder === undefined) {
-        error = { message: "Error: Please enter a valid location" }
+        error = { message: "Error: Please enter one of the locations listed to see the weather: Seattle, Paris, or Amman" }
         return res.status(500).send(error);
     } 
 
