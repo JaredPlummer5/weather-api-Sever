@@ -1,18 +1,22 @@
 {
-  "name": "weather-back-end",
-  "version": "1.0.0",
-  "description": "**Author**: Jared Plummer",
-  "main": "server.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "weather-back-end",
+    "version": "1.0.0",
+    "description": "**Author**: Jared Plummer",
+    "main": "server.js",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "netlify-lambda": "^2.0.16",
+        "serverless-http": "^3.2.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js",
+        "start": "netlify-lambda serve src",
+        "build": "netlify-lambda build src"
+    },
+    "author": "",
+    "license": "ISC"
 }
