@@ -2,23 +2,27 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-const serverless = require("serverless-http");
 
 const app = express();
 app.use(cors());
-// Create a router to handle routes
-const router = express.Router();
 
-router.get('/', function (req, res) {
+const PORT = process.env.PORT || 9000;
+
+app.get('/', async function (req, res) {
     res.send("hello")
 })
 
-router.get('/weather', function (req, res) {
+app.get('/damovies', (req, res) => {
+    let { searchQuery } = req.query;
+    res.send("lets watch " + searchQuery)
+})
+
+app.get('/weather',  function (req, res) {
 
     const { city } = req.query;
     const api = 'eb1a646a8644433db25fe7d36799fb2a'
     const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${api}`
-
+    
     let weatherData = axios.get(url)
         .then(response => {
             let mappingWeatherData = response.data.data.map(element => {
@@ -32,7 +36,7 @@ router.get('/weather', function (req, res) {
 
 });
 
-router.get('/movies', function (req, res) {
+app.get('/movies', function (req, res) {
     let { searchQuery } = req.query
     const url = `https://api.themoviedb.org/3/search/multi?api_key=86643b90f50b06dcb8c9661ec2b8b998&query=${searchQuery}`;
     let moviesArray
@@ -57,19 +61,10 @@ router.get('/movies', function (req, res) {
 
         });
 
-
 });
 
-app.listen(3001, () => {
-    console.log('Server is running on port 3001');
-});
+app.listen(PORT)
 
-// Use the router to handle requests to the `/.netlify/functions/api` path
-app.use(`/.netlify/functions/server`, router);
-
-// Export the app and the serverless function
-module.exports = app;
-module.exports.handler = serverless(app);
 
 // Define a Forecast class to represent weather forecast data
 class Forecast {

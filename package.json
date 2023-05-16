@@ -9,11 +9,12 @@
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
         "netlify-lambda": "^2.0.16",
+        "node-fetch": "^3.3.1",
         "serverless-http": "^3.2.0"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon server.js",
+        "dev": "nodemon src/server.js",
         "start": "netlify-lambda serve src",
         "build": "netlify-lambda build src"
     },
