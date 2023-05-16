@@ -13,9 +13,9 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon server.js",
-        "start": "netlify-lambda serve src",
-        "build": "netlify-lambda build src"
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js",
+        "build": "node src/server.js"
     },
     "author": "",
     "license": "ISC"
