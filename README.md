@@ -22,7 +22,7 @@ The server will start running on port 3001, and you can access it by going to `h
 
 ## Architecture
 
-This application uses Node.js and the Express.js framework to create an API server. The server listens for incoming requests and responds with weather forecast data. The weather data is stored in a JSON file, and the server retrieves the data based on the user's query. 
+This application uses Node.js and the Express.js framework to create an API server. The server listens for incoming requests and responds with weather forecast data. The weather data is stored in a JSON file, and the server retrieves the data based on the user's query.
 
 The API server has one endpoint: `/weather`. When the server receives a GET request at this endpoint, it extracts the latitude, longitude, and search query parameters from the request. It then searches the weather data JSON file for a location that matches the search query or the latitude and longitude. If a matching location is found, the server sends back the weather forecast data for that location. If no matching location is found, the server sends back an error message.
 
