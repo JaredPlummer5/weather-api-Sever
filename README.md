@@ -37,14 +37,33 @@ The application also defines a `Forecast` class, which is used to create forecas
 No credit or collaborations at this time.
 
 ## Features and Times
-
-Name of feature: **Weather info for the city**
+<!-- Lab 6  -->
+Name of feature: **Weather info for certain cities**
 
 Estimate of time needed to complete: **4 hours**
 
-Start time: **11:44**
+Start time: **11:44am**
 
-Finish time: **1:45**
+Finish time: **1:45pm**
 
 Actual time needed to complete: **2 hours**
+<!-- Lab 7 -->
+Name of feature: **Weather info API for all cities**
 
+Estimate of time needed to complete: **5 hours**
+
+Start time: **9:30am**
+
+Finish time: **11:45pm**
+
+Actual time needed to complete: **3 hours and 15 minutes**
+<!-- Lab 8 -->
+Name of feature: **Weather and Movie info API for all cities**
+
+Estimate of time needed to complete: **24 hours**
+
+Start time: **9:05am**
+
+Finish time: **4:45pm**
+
+Actual time needed to complete: **7 hours and 40 minutes**
