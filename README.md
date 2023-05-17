@@ -6,31 +6,41 @@
 
 ## Overview
 
-This application is a weather API that allows users to get the forecast of a specific location. The weather data is stored in a JSON file, and users can query the API using latitude, longitude, or city name. The application uses Node.js and the Express.js framework.
+The server is built using Express and enables Cross-Origin Resource Sharing (CORS) to allow requests from different domains. It has three main endpoints: root, `/damovies`, and `/weather`. The `/movies` endpoint fetches movie data from a third-party API, and the `/weather` endpoint fetches weather data from another API.
 
 ## Getting Started
 
-To run this application on your local machine, you will need to have Node.js and npm (Node Package Manager) installed. Then, follow these steps:
+To run this code on your machine, follow these steps:
 
-1. Clone the repository
+1. Install the required dependencies by running `npm install` or `yarn install` in the project directory.
 
-2. Install the dependencies by running `npm install` in the terminal
+2. Set up the environment variables in a `.env` file. It should include a `PORT` variable for the server port and an API key for the weather API.
 
-3. Run the server by running `npm start` in the terminal
+3. Start the server by running `node server.js` or using a tool like Nodemon with `nodemon server.js`.
 
-The server will start running on port 3001, and you can access it by going to `http://localhost:3001/weather`.
+4. Access the endpoints using a browser or an API testing tool.
 
-## Architecture
+### Architecture
 
-This application uses Node.js and the Express.js framework to create an API server. The server listens for incoming requests and responds with weather forecast data. The weather data is stored in a JSON file, and the server retrieves the data based on the user's query.
+The application is built using Node.js and Express.js for the server. It also utilizes the Axios library for making HTTP requests to external APIs.
 
-The API server has one endpoint: `/weather`. When the server receives a GET request at this endpoint, it extracts the latitude, longitude, and search query parameters from the request. It then searches the weather data JSON file for a location that matches the search query or the latitude and longitude. If a matching location is found, the server sends back the weather forecast data for that location. If no matching location is found, the server sends back an error message.
+The server listens on a specified port (default is 9000) and handles incoming GET requests to different endpoints. The `/` endpoint responds with "hello", the `/damovies` endpoint responds with "lets watch [searchQuery]", and the `/weather` and `/movies` endpoints make API requests to retrieve weather and movie data.
 
-The application also defines a `Forecast` class, which is used to create forecast objects with a specific format. This class is used to create an array of forecast objects from the weather data.
+The weather API endpoint fetches weather data for a specified city by sending a request to the Weatherbit API. The movie API endpoint fetches movie data for a specified search query by sending a request to The Movie Database (TMDb) API. The retrieved data is then processed and returned to the client.
+
+The server also includes two classes: `Forecast` and `Movie`. These classes represent the structure of weather forecast and movie data, respectively.
 
 ## Change Log
 
-09-05-2023 2:00pm - Initial version of the application with the ability to search for weather forecast by latitude, longitude or city name.
+### 05-09-2023 2:00pm
+
+- Initial version of the application with the ability to search for weather forecast by latitude, longitude, or city name.
+
+### 05-16-2023 7:05pm
+
+- Added movie API and search functionality for movies.
+- Improved weather API to handle errors and provide better error messages.
+- Refactored code to improve organization and readability.
 
 ## Credit and Collaborations
 
@@ -47,6 +57,7 @@ Start time: **11:44am**
 Finish time: **1:45pm**
 
 Actual time needed to complete: **2 hours**
+
 <!-- Lab 7 -->
 Name of feature: **Weather info API for all cities**
 
@@ -57,6 +68,7 @@ Start time: **9:30am**
 Finish time: **11:45pm**
 
 Actual time needed to complete: **3 hours and 15 minutes**
+
 <!-- Lab 8 -->
 Name of feature: **Weather and Movie info API for all cities**
 
