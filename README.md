@@ -79,3 +79,15 @@ Start time: **9:05am**
 Finish time: **4:45pm**
 
 Actual time needed to complete: **7 hours and 40 minutes**
+
+<!-- Lab 9 -->
+Name of feature: **Modularize the back-end codebase**
+
+Estimate of time needed to complete: **8 hours**
+
+Start time: **1:35am**
+
+Finish time: **2:00pm**
+
+Actual time needed to complete: **25 mintues**
+
