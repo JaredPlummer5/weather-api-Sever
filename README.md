@@ -91,3 +91,13 @@ Finish time: **2:00pm**
 
 Actual time needed to complete: **25 mintues**
 
+<!-- Lab 10 -->
+Name of feature: **Cache external API data**
+
+Estimate of time needed to complete: **3 days**
+
+Start time: **2:33am**
+
+Finish time: ****
+
+Actual time needed to complete: ****
