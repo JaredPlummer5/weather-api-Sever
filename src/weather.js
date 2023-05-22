@@ -37,7 +37,6 @@ exports.forecast = function (req, res) {
                 res.send(mappingWeatherData); // Respond with the mapped weather forecast data
                 const ttl = 3600; // TTL in seconds (e.g., 1 hour)
                 forecastCache.set(cacheKey, mappingWeatherData, ttl);
-            })
-            .catch(error => res.send(error.message)); // Handle any errors that occur during the API request
+            }).catch(error => res.send(error.message)); // Handle any errors that occur during the API request
     }
 };
