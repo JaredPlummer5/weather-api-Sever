@@ -5,6 +5,7 @@ const cors = require('cors'); // Enable Cross-Origin Resource Sharing (CORS)
 const axios = require('axios'); // HTTP client for making API requests
 const weather = require('./weather'); // Import the weather module
 const moviesJs = require('./movie'); // Import the movie module
+const yelp = require('./yelp'); // Import the yelp module
 const app = express(); // Create an Express application
 
 app.use(cors()); // Enable CORS for all routes
@@ -23,5 +24,7 @@ app.get('/damovies', (req, res) => {
 app.get('/weather', weather.forecast); // Use the weather.forecast function to handle the '/weather' route
 
 app.get('/movie', moviesJs.movie); // Use the moviesJs.movie function to handle the '/movie' route
+
+app.get('/yelp',yelp.yelpRestuarant)
 
 app.listen(PORT); // Start the Express server on the specified port
